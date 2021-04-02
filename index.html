@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOOPS</title>
+    <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body>
+    <div class="game-intro">
+        <h1>
+            H<img class="title-ball" src="images/basketball-orange.png" alt="o"/><img class="title-ball" src="images/basketball-orange.png" alt="o"/>PS
+        </h1>
+        <img src="images/court.png" alt ="court" class="logo-image"/>
+        <br>
+        <h2>Pick your team and start shooting hoops!</h2>
+        <button id="lakers-button" class="button"></button>
+        <button id="gsw-button" class="button"></button>
+        <button id="celtics-button" class="button"></button>
+        <button id="bulls-button" class="button"></button>
+    
+        <div class="instructions">
+            <h3><u>Instructions</u></h3>
+                <p>Use the left and right arrow keys to move the hoop and catch the balls</p>
+                <p>Orange ball = 1 point</p>
+                <p>Green ball= 3 points</p>
+                <p>Avoid catching the Red balls or Game Over!</p>
+                <p>Miss three balls and Game Over!</p>
+        </div>
+    </div>
+
+    <div class="game-info">
+        <p>Score: <span id="score"> 0 </span></p> 
+        <p>Lives:<span id="lives"> 3</span></p>
+    </div>
+    
+    <div id="game-board">
+        <canvas id="canvas" width="800" height="600"></canvas>
+
+    </div>
+
+</body>
+</html>

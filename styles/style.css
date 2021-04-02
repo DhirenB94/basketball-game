@@ -1,0 +1,69 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    text-align: center;
+}
+.instructions {
+    text-align: left;
+}
+
+.game-intro {
+    float: left;
+    padding: 0%, 10%;
+    border: solid red;
+    margin-top: 70px;
+   
+}
+.game-intro h1{
+    color: rgb(223, 132, 14);
+    position: relative;
+    top: 180px;
+    font-size: 25px;
+}
+.title-ball {
+    width: 19px;
+    height: 19px;
+}
+
+.logo-image {
+    width: 450px;
+    
+}
+
+.button{
+    width: 135px;
+    height: 75px;
+    background-color: rgb(233, 132, 14,0.8);
+}
+
+#lakers-button {
+    background-image: url('../images/lakers-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#gsw-button {
+    background-image: url('../images/gsw-logo.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#celtics-button{
+    background-image: url('../images/celtics-logo.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#bulls-button {
+    background-image: url('../images/bulls-logo.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+canvas {
+    border: solid black;
+    margin-top: 9px;
+}
+
