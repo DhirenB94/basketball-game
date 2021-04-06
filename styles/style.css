@@ -30,40 +30,17 @@ body {
     
 }
 
-.button{
-    width: 135px;
+#start-button{
+    width: 235px;
     height: 75px;
     background-color: rgb(233, 132, 14,0.8);
-}
-
-#lakers-button {
-    background-image: url('../images/lakers-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-#gsw-button {
-    background-image: url('../images/gsw-logo.png');
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-#celtics-button{
-    background-image: url('../images/celtics-logo.png');
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-#bulls-button {
-    background-image: url('../images/bulls-logo.png');
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 
 canvas {
     border: solid black;
     margin-top: 9px;
+    background-image: url('../images/finals-trophy.png');
+    background-size: contain;
 }
 

@@ -14,11 +14,8 @@
         </h1>
         <img src="images/court.png" alt ="court" class="logo-image"/>
         <br>
-        <h2>Pick your team and start shooting hoops!</h2>
-        <button id="lakers-button" class="button"></button>
-        <button id="gsw-button" class="button"></button>
-        <button id="celtics-button" class="button"></button>
-        <button id="bulls-button" class="button"></button>
+        <h2>Start shooting hoops!</h2>
+        <button id="start-button">Start Game</button>
     
         <div class="instructions">
             <h3><u>Instructions</u></h3>
@@ -26,7 +23,7 @@
                 <p>Orange ball = 1 point</p>
                 <p>Green ball= 3 points</p>
                 <p>Avoid catching the Red balls or Game Over!</p>
-                <p>Miss three balls and Game Over!</p>
+                <p>Miss three Orange balls and Game Over!</p>
         </div>
     </div>
 
@@ -38,7 +35,12 @@
     <div id="game-board">
         <canvas id="canvas" width="800" height="600"></canvas>
 
-    </div>
+    </div> 
+ 
 
+<script src="js/balls.js"></script>
+<script src="js/net.js"></script>
+<script src="js/game.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
