@@ -1,7 +1,7 @@
 class Net {
     constructor(x, y, width, height) {
         this.x = 350;
-        this.y = 520;
+        this.y = 550;
         this.width = 100;
         this.height = 100;
 
@@ -16,12 +16,12 @@ class Net {
         switch(keyCode) {
             case 37:
                 if(this.x>0) {
-                this.x -= 50;
+                this.x -= 30;
                 }   
                 break;
             case 39:
                 if(this.x<700) {
-                this.x += 50
+                this.x += 30
                 }
                 break;
 

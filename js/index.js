@@ -23,9 +23,17 @@ function startGame() {
 }
 
  function detectCollision(ball) {
-     return !((currentGame.net.x > ball.x + ball.width) ||
+ /*    return !((currentGame.net.x > ball.x + ball.width) ||
      (currentGame.net.x + currentGame.net.width < ball.x) ||
-     (currentGame.net.y > ball.y + ball.height))
+     (currentGame.net.y > ball.y + ball.height))*/
+     if ((ball.y + ball.height > currentGame.net.y) &&
+        (ball.x + ball.width > currentGame.net.x) &&
+        (ball.x < currentGame.net.x + currentGame.net.width)) {
+            return true;
+        }
+    return false;
+    
+
 }
 
 function updateCanvas() {
@@ -46,7 +54,7 @@ function updateCanvas() {
 
         if (detectCollision(ball)) {
             if(ball.color==="red") {
-                alert('BOOM! You caught the bomb - Game Over');
+                alert('BOOM! You caught the Red ball - Game Over');
                 ballsFrequency = 0;
                 currentGame.obstacles = [];
                 document.getElementById('canvas').style.display = 'none';
@@ -56,13 +64,13 @@ function updateCanvas() {
             document.getElementById("score").innerText = currentGame.score;
         }
 
-        if (ball.y > 600 && ball.color ==="orange") {
+        if (ball.y > 550 && ball.color ==="orange") {
             currentGame.lives --;
             document.getElementById('lives').innerHTML = currentGame.lives;
             currentGame.balls.splice(index, 1); 
         }
 
-        if (ball.y > 570) {
+        if (ball.y > 550) {
             currentGame.balls.splice(index, 1);
         }
         

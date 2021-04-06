@@ -5,7 +5,7 @@ class Ball {
         this.width = 30
         this.height = 30
         this.color = color; //tied the image and the points to the balls colour
-        this.velocity = Math.floor(Math.random() * 10)+1;
+        this.velocity = Math.floor(Math.random() * 8)+1;
         this.image = new Image();
         this.setPoints()
 
