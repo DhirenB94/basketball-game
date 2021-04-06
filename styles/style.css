@@ -89,3 +89,17 @@ canvas {
     height: 500px;
     width: 700px
 }
+
+
+@font-face {
+    font-family: DangerOnTheMotorway;
+    src: url('../fonts/DangerOnTheMotorway-xV10.ttf')
+}
+.font {
+    font-family: DangerOnTheMotorway;
+    color: rgb(206, 129, 13);
+    margin-left: 46.5%;
+    margin-right: 46.5%;
+    padding: 5px 0px;
+    background-color: rgb(48, 44, 40)
+}
