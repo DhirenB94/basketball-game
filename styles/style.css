@@ -40,7 +40,7 @@ body {
 canvas {
     border: solid black;
     margin-top: 9px;
-    background-image: url('../images/finals-trophy.png');
-    background-size: contain;
+    background-image: url('../images/bball-court.jpg');
+    background-size: cover;
 }
 

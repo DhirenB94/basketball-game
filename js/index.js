@@ -46,33 +46,34 @@ function updateCanvas() {
 
         if (detectCollision(ball)) {
             if(ball.color==="red") {
-                alert('BOOOM!');
+                alert('BOOM! You caught the bomb - Game Over');
                 ballsFrequency = 0;
                 currentGame.obstacles = [];
-                document.getElementById('game-board').style.display = 'none';
+                document.getElementById('canvas').style.display = 'none';
             }
             currentGame.score += ball.setPoints();
             currentGame.balls.splice(index, 1);
             document.getElementById("score").innerText = currentGame.score;
         }
 
-        // if (ball.y>720 && ball.color ==="orange") {
-        //     currentGame.score ++;
-        //     document.getElementById('score').innerHTML = currentGame.score;
-        //     currentGame.balls.splice(index, 1);
-            
-        // }
+        if (ball.y > 600 && ball.color ==="orange") {
+            currentGame.lives --;
+            document.getElementById('lives').innerHTML = currentGame.lives;
+            currentGame.balls.splice(index, 1); 
+        }
 
-
-        // if (ball.y>720 && ball.color ==="green") {
-        //     currentGame.score + 3;
-        //     document.getElementById('score').innerHTML = currentGame.score;
-        //     currentGame.balls.splice(index, 1);
-                //DOESNT WORK
-        // }
-
+        if (ball.y > 570) {
+            currentGame.balls.splice(index, 1);
+        }
+        
     })
-
+    
+    if (currentGame.lives === -1) {
+        alert('You missed too many shots, the coach has benched you - Game Over!');
+            ballsFrequency = 0;
+            currentGame.obstacles = [];
+            document.getElementById('canvas').style.display = 'none';
+    }
 
     animationId = requestAnimationFrame(updateCanvas); 
 }
