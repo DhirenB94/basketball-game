@@ -2,27 +2,35 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 0;
     text-align: center;
+    background-color: rgb(233, 132, 14,0.8);
+    
 }
+
 .instructions {
     text-align: left;
 }
 
 .game-intro {
     float: left;
-    padding: 0%, 10%;
-    border: solid red;
-    margin-top: 70px;
-   
+    margin-top: 9px;
+    margin-left: 25px;
+    background-image: url(../images/swish.jpg);
+    background-size: cover;
+    color: white
+    
 }
 .game-intro h1{
     color: rgb(223, 132, 14);
     position: relative;
-    top: 180px;
-    font-size: 25px;
+    top: 55px;
+    font-size: 40px;
+}
+.game-intro h2{
+    color: rgb(223, 132, 14);
 }
 .title-ball {
-    width: 19px;
-    height: 19px;
+    width: 35px;
+    height: 32px;
 }
 
 .logo-image {
@@ -34,13 +42,50 @@ body {
     width: 235px;
     height: 75px;
     background-color: rgb(233, 132, 14,0.8);
+    margin: 50px
 }
 
-
+.game-info{
+    text-align: center;
+}
 canvas {
-    border: solid black;
     margin-top: 9px;
     background-image: url('../images/bball-court.jpg');
-    background-size: cover;
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
+
+#game-over-red-ball{
+    text-align: center;
+    font-size: 25px;
+    color: red;
+    padding-bottom: 100px;
+}
+.red-ball{
+    position: relative;
+    width: 90px;
+    height: 90px;
+    left: 435px;
+    bottom: 300px
+}
+.game-over{
+    margin-right: 120px;
+}
+.refresh {
+    color: black;
+    font-size: 30px;;
+}
+
+
+
+#game-over-orange-ball{
+    text-align: center;
+    font-size: 25px;
+    color: whitesmoke
+}
+
+.orange-ball{
+    height: 500px;
+    width: 700px
+}

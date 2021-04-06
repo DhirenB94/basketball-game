@@ -4,5 +4,6 @@ class Game {
         this.balls = [];
         this.score = 0;
         this.lives = 3;
+        this.gameRunning = true
     }
 }

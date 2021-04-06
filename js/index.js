@@ -1,9 +1,13 @@
 let currentGame;
 let animationId;
 let ballsFrequency = 0;
+let myMusic = new Audio ('./Crowd Cheers and Applause Sound Effects Super Extend.mp3')
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
+
+document.getElementById('game-over-red-ball').style.display = 'none';
+document.getElementById('game-over-orange-ball').style.display = 'none'
 
 
 document.getElementById('start-button').onclick = () => {
@@ -15,6 +19,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 function startGame() {
+     myMusic.loop = true
+     myMusic.play();
     currentGame = new Game();
     currentNet = new Net();
     currentGame.net = currentNet;
@@ -23,15 +29,16 @@ function startGame() {
 }
 
  function detectCollision(ball) {
- /*    return !((currentGame.net.x > ball.x + ball.width) ||
+ return !((currentGame.net.x > ball.x + ball.width) ||
      (currentGame.net.x + currentGame.net.width < ball.x) ||
-     (currentGame.net.y > ball.y + ball.height))*/
-     if ((ball.y + ball.height > currentGame.net.y) &&
-        (ball.x + ball.width > currentGame.net.x) &&
-        (ball.x < currentGame.net.x + currentGame.net.width)) {
-            return true;
-        }
-    return false;
+     (currentGame.net.y > ball.y + ball.height))
+   
+     //  if ((ball.y + ball.height > currentGame.net.y) &&
+    //     (ball.x + ball.width > currentGame.net.x) &&
+    //     (ball.x < currentGame.net.x + currentGame.net.width)) {
+    //         return true;
+    //     }
+    // return false;
     
 
 }
@@ -54,34 +61,43 @@ function updateCanvas() {
 
         if (detectCollision(ball)) {
             if(ball.color==="red") {
-                alert('BOOM! You caught the Red ball - Game Over');
-                ballsFrequency = 0;
-                currentGame.obstacles = [];
-                document.getElementById('canvas').style.display = 'none';
+               currentGame.gameRunning = false
+                document.getElementById('page').style.display = 'none';
+                document.getElementById('game-over-red-ball').style.display  = 'block';
+                
             }
             currentGame.score += ball.setPoints();
             currentGame.balls.splice(index, 1);
             document.getElementById("score").innerText = currentGame.score;
         }
 
+
         if (ball.y > 550 && ball.color ==="orange") {
             currentGame.lives --;
             document.getElementById('lives').innerHTML = currentGame.lives;
             currentGame.balls.splice(index, 1); 
-        }
-
-        if (ball.y > 550) {
+        } else if (ball.y > 550) {
             currentGame.balls.splice(index, 1);
         }
         
     })
     
-    if (currentGame.lives === -1) {
-        alert('You missed too many shots, the coach has benched you - Game Over!');
-            ballsFrequency = 0;
-            currentGame.obstacles = [];
-            document.getElementById('canvas').style.display = 'none';
+    if (currentGame.lives <= 0) {
+           currentGame.gameRunning = false
+            document.getElementById('page').style.display = 'none';
+            document.getElementById('game-over-orange-ball').style.display  = 'block';
     }
 
-    animationId = requestAnimationFrame(updateCanvas); 
+    if(currentGame.gameRunning) {
+        animationId = requestAnimationFrame(updateCanvas); 
+    } else {
+        gameOver()
+    }
+}
+
+function gameOver() {
+    cancelAnimationFrame(animationId)
+    ballsFrequency = 0;
+    currentGame.obstacles = [];
+    myMusic.pause()
 }

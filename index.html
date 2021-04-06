@@ -8,39 +8,60 @@
     <link rel="stylesheet" href="styles/style.css"/>
 </head>
 <body>
-    <div class="game-intro">
-        <h1>
-            H<img class="title-ball" src="images/basketball-orange.png" alt="o"/><img class="title-ball" src="images/basketball-orange.png" alt="o"/>PS
-        </h1>
-        <img src="images/court.png" alt ="court" class="logo-image"/>
-        <br>
-        <h2>Start shooting hoops!</h2>
-        <button id="start-button">Start Game</button>
     
-        <div class="instructions">
-            <h3><u>Instructions</u></h3>
-                <p>Use the left and right arrow keys to move the hoop and catch the balls</p>
-                <p>Orange ball = 1 point</p>
-                <p>Green ball= 3 points</p>
-                <p>Avoid catching the Red balls or Game Over!</p>
-                <p>Miss three Orange balls and Game Over!</p>
+        <div id="page">    
+        
+        <div class="game-intro">
+            <h1>
+                H<img class="title-ball" src="images/basketball-orange.png" alt="o"/><img class="title-ball" src="images/basketball-orange.png" alt="o"/>PS
+            </h1>
+            <br>
+            <h2>Start shooting hoops!</h2>
+            <button id="start-button">Start Game</button>
+        
+            <div class="instructions">
+                <h3><u>Instructions</u></h3>
+                    <p>Use the left and right arrow keys to move the hoop and catch the balls</p>
+                    <p>Orange ball = 1 point</p>
+                    <p>Green ball= 3 points</p>
+                    <p>Avoid catching the Red & White balls or Game Over!</p>
+                    <p>Miss three Orange balls and Game Over!</p>
+            </div>
         </div>
-    </div>
 
+        <div id="game-board">
+            <canvas id="canvas" width="800" height="600"></canvas>
+        </div>
+
+    </div>
     <div class="game-info">
         <p>Score: <span id="score"> 0 </span></p> 
         <p>Lives:<span id="lives"> 3</span></p>
     </div>
     
-    <div id="game-board">
-        <canvas id="canvas" width="800" height="600"></canvas>
+    
 
-    </div> 
+    <div id="game-over-red-ball">
+        <img src="images/basketball-red.png" alt="red ball" class="red-ball">
+        <img src="images/game-over.png" alt="gameover" class="game-over">
+        <br>YOU CAUGHT THE DEADLY <br>RED & WHITE BALL <br> <br> 
+        <p class="refresh">HIT REFRESH TO PLAY AGAIN </p>
+    </div>
+
+    <div id="game-over-orange-ball">
+        <img src="images/bench.jpg" alt="bench" class="orange-ball"> <br>
+        YOU MISSED TOO MANY SHOTS!<br>
+        COACH HAS SENT YOU BACK TO THE GYM<br>
+        TO PRACTICE SOME MORE <br> <br>
+        <p class="refresh">HIT REFRESH TO PLAY AGAIN </p>
+    </div>
  
 
 <script src="js/balls.js"></script>
 <script src="js/net.js"></script>
 <script src="js/game.js"></script>
 <script src="js/index.js"></script>
+
+
 </body>
 </html>
