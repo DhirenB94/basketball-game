@@ -1,7 +1,7 @@
 let currentGame;
 let animationId;
 let ballsFrequency = 0;
-let myMusic = new Audio ('./Crowd Cheers and Applause Sound Effects Super Extend.mp3')
+let myMusic = new Audio ('./audio/Crowd Cheers and Applause Sound Effects Super Extend.mp3');
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
@@ -19,8 +19,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 function startGame() {
-     myMusic.loop = true
-     myMusic.play();
+    myMusic.loop = true
+    myMusic.play();
     currentGame = new Game();
     currentNet = new Net();
     currentGame.net = currentNet;
@@ -82,8 +82,9 @@ function updateCanvas() {
         
     })
     
-    if (currentGame.lives <= 0) {
+    if (currentGame.lives < 0) {
            currentGame.gameRunning = false
+           document.getElementById('lives').innerHTML = "0"
             document.getElementById('page').style.display = 'none';
             document.getElementById('game-over-orange-ball').style.display  = 'block';
     }

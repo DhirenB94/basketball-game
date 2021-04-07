@@ -2,7 +2,9 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 0;
     text-align: center;
-    background-color: rgb(233, 132, 14,0.8);
+    background-image: url('../images/background-court.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     
 }
 
@@ -14,7 +16,7 @@ body {
     float: left;
     margin-top: 9px;
     margin-left: 25px;
-    background-image: url(../images/swish.jpg);
+    background-image: url('../images/swish.jpg');
     background-size: cover;
     color: white
     
@@ -42,24 +44,27 @@ body {
     width: 235px;
     height: 75px;
     background-color: rgb(233, 132, 14,0.8);
-    margin: 50px
+    margin: 50px;
+    font-size: 30px;
 }
 
 .game-info{
     text-align: center;
+    margin-top: 10px;
 }
 canvas {
     margin-top: 9px;
     background-image: url('../images/bball-court.jpg');
     background-size:cover;
     background-repeat: no-repeat;
+    
 }
 
 
 #game-over-red-ball{
     text-align: center;
     font-size: 25px;
-    color: red;
+    color: black;
     padding-bottom: 100px;
 }
 .red-ball{
@@ -71,35 +76,59 @@ canvas {
 }
 .game-over{
     margin-right: 120px;
+    margin-top: 25px;
 }
 .refresh {
     color: black;
     font-size: 30px;;
 }
 
-
-
 #game-over-orange-ball{
     text-align: center;
     font-size: 25px;
-    color: whitesmoke
+    color: black
 }
 
 .orange-ball{
-    height: 500px;
-    width: 700px
+    height: 450px;
+    width: 650px;
+    margin-top: 25px;
 }
 
-
+#score {
+    font-size: 50px;
+    color:red;
+    
+    
+}
+#lives {
+    font-size: 50px;
+    color: yellow;
+}
 @font-face {
     font-family: DangerOnTheMotorway;
     src: url('../fonts/DangerOnTheMotorway-xV10.ttf')
 }
-.font {
+.display-score {
     font-family: DangerOnTheMotorway;
-    color: rgb(206, 129, 13);
-    margin-left: 46.5%;
-    margin-right: 46.5%;
-    padding: 5px 0px;
-    background-color: rgb(48, 44, 40)
+    font-size: 50px;
+    color: red;
+    margin-right: 650px;
+    margin-top: 50px;
+    background-color:black;
+    padding: 7px;
+    display: inline;
+}
+.display-lives {
+    font-family: DangerOnTheMotorway;
+    font-size: 50px;
+    color: yellow;
+    margin-left: 0px;
+
+    padding: 7px;
+    display: inline;
+}
+
+#restart-button-orange {
+    position:relative;
 }

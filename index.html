@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOOPS</title>
     <link rel="stylesheet" href="styles/style.css"/>
-    <link rel="stylesheet" type="text/css" href="DangerOnTheMotorway-xV10.ttf">
 </head>
 <body>
     
@@ -17,11 +16,11 @@
                 H<img class="title-ball" src="images/basketball-orange.png" alt="o"/><img class="title-ball" src="images/basketball-orange.png" alt="o"/>PS
             </h1>
             <br>
-            <h2>Start shooting hoops!</h2>
+            <h2>Test your shooting skills!</h2>
             <button id="start-button">Start Game</button>
         
             <div class="instructions">
-                <h3><u>Instructions</u></h3>
+                <h3><u>How to Hoop</u></h3>
                     <p>Use the left and right arrow keys to move the hoop and catch the balls</p>
                     <p>Orange ball = 1 point</p>
                     <p>Green ball= 3 points</p>
@@ -36,8 +35,8 @@
 
     </div>
     <div class="game-info">
-        <p class="font">Score: <span id="score"> 0 </span></p> 
-        <p class="font">Lives:<span id="lives"> 3</span></p>
+        <p class="display-score">Score:<span id="score">0</span></p> 
+        <p class="display-lives">Lives:<span id="lives">3</span></p>
     </div>
     
     
@@ -45,16 +44,15 @@
     <div id="game-over-red-ball">
         <img src="images/basketball-red.png" alt="red ball" class="red-ball">
         <img src="images/game-over.png" alt="gameover" class="game-over">
-        <br>YOU CAUGHT THE DEADLY <br>RED & WHITE BALL <br> <br> 
-        <p class="refresh">HIT REFRESH TO PLAY AGAIN </p>
+        <br>YOU CAUGHT THE DEADLY <br>RED & WHITE BALL <br> <br>
+        <a href="javascript:history.go(0)" class="refresh">Click here to be better</a>
     </div>
 
     <div id="game-over-orange-ball">
         <img src="images/bench.jpg" alt="bench" class="orange-ball"> <br>
         YOU MISSED TOO MANY SHOTS!<br>
-        COACH HAS SENT YOU BACK TO THE GYM<br>
-        TO PRACTICE SOME MORE <br> <br>
-        <p class="refresh">HIT REFRESH TO PLAY AGAIN </p>
+        COACH HAS TAKEN YOU OUT OF THE GAME! <br> <br>
+        <a href="javascript:history.go(0)" class="refresh">Click here to be better</a>
     </div>
  
 
