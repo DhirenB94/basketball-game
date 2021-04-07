@@ -75,7 +75,8 @@ canvas {
     bottom: 300px
 }
 .game-over{
-    margin-right: 120px;
+    height: 350px;
+    width: 550px;
     margin-top: 25px;
 }
 .refresh {
@@ -93,6 +94,7 @@ canvas {
     height: 450px;
     width: 650px;
     margin-top: 25px;
+    
 }
 
 #score {

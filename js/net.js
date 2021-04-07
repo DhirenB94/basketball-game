@@ -31,6 +31,8 @@ class Net {
             case 68:
                 this.x =700
             break;
+            case 83:
+                this.x=350
         }
     }
 }
