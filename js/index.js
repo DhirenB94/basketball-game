@@ -47,7 +47,7 @@ function updateCanvas() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     currentGame.net.draw();
     ballsFrequency++;
-    if (ballsFrequency % 100 === 1) {
+    if (ballsFrequency % 75 === 1) {
         const colors = ["red", "orange", "green"]
         const randomColor = colors[Math.floor(Math.random() * colors.length)]
         const randomX = Math.floor(Math.random() * 750);

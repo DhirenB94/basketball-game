@@ -4,6 +4,7 @@ class Net {
         this.y = 550;
         this.width = 100;
         this.height = 100;
+        this.sp
 
     }
     draw() {
@@ -15,16 +16,21 @@ class Net {
         context.clearRect(this.x, this.y, this.width, this.height);
         switch(keyCode) {
             case 37:
-                if(this.x>0) {
-                this.x -= 30;
+                if(this.x>=0) {
+                this.x -= 25;
                 }   
-                break;
+            break;
             case 39:
-                if(this.x<700) {
-                this.x += 30
+                if(this.x<=700) {
+                this.x += 25
                 }
-                break;
-
+            break;
+            case 65:
+                this.x=1 
+            break;
+            case 68:
+                this.x =700
+            break;
         }
     }
 }
