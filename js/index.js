@@ -1,7 +1,9 @@
 let currentGame;
 let animationId;
 let ballsFrequency = 0;
-let myMusic = new Audio ('./audio/Crowd Cheers and Applause Sound Effects Super Extend.mp3');
+let background = new Audio ('./audio/crowd.mp3');
+let swoosh = new Audio ('./audio/swoosh-sound.mp3');
+let buzzer = new Audio ('./audio/buzzer.mp3');
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
@@ -19,8 +21,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 function startGame() {
-    myMusic.loop = true
-    myMusic.play();
+    background.loop = true
+    background.play();
     currentGame = new Game();
     currentNet = new Net();
     currentGame.net = currentNet;
@@ -64,8 +66,10 @@ function updateCanvas() {
                currentGame.gameRunning = false
                 document.getElementById('page').style.display = 'none';
                 document.getElementById('game-over-red-ball').style.display  = 'block';
+                buzzer.play();
                 
             }
+            swoosh.play();
             currentGame.score += ball.setPoints();
             currentGame.balls.splice(index, 1);
             document.getElementById("score").innerText = currentGame.score;
@@ -84,6 +88,7 @@ function updateCanvas() {
     
     if (currentGame.lives < 0) {
            currentGame.gameRunning = false
+           buzzer.play();
            document.getElementById('lives').innerHTML = "0"
             document.getElementById('page').style.display = 'none';
             document.getElementById('game-over-orange-ball').style.display  = 'block';
@@ -100,5 +105,7 @@ function gameOver() {
     cancelAnimationFrame(animationId)
     ballsFrequency = 0;
     currentGame.obstacles = [];
-    myMusic.pause()
+    background.pause();
+    swoosh.pause();
+    
 }
